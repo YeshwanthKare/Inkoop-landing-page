@@ -1,3 +1,8 @@
+window.onload = () => {
+  itemsScrollBar();
+  dropDownButtons();
+};
+
 const items = [
   {
     img: "https://imgk.timesnownews.com/story/chad-montano-lP5MCM6nZ5A-unsplash.jpg?tr=w-400,h-300,fo-auto",
@@ -42,4 +47,21 @@ const itemsScrollBar = () => {
   mobileContainer.children[4].classList.add("last-child");
 };
 
-itemsScrollBar();
+const dropDownButtons = () => {
+  let button = document.querySelector(".burger-menu");
+  let dropdown = document.querySelector("#side-nav-list");
+
+  button.addEventListener("click", () => {
+    if (dropdown.style.display === "") {
+      dropdown.style.display = "block";
+    } else {
+      dropdown.style.display = "";
+    }
+  });
+
+  button.addEventListener("focusout", () => {
+    setTimeout(() => {
+      dropdown.style.display = "";
+    }, 100);
+  });
+};

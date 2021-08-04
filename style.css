@@ -18,7 +18,6 @@
 
 .top-heading h1 {
   font-family: "Abril Fatface", cursive;
-  /*     background-color: blue; */
   padding-left: 40px;
 }
 
@@ -31,7 +30,6 @@ ul li {
   list-style-type: none;
   margin: 40px 0px 0px 0px;
   cursor: pointer;
-  /*   background-color: blue; */
   width: 25%;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -39,7 +37,6 @@ ul li {
 }
 
 ul li:hover {
-  /*   color: #8e8e93; */
   text-decoration: line-through 2px solid #ff4d4d;
 }
 
@@ -61,10 +58,6 @@ ul li:hover {
   outline: none;
 }
 
-.main-body-container {
-  /*   background-color: blue; */
-}
-
 .main-text-container {
   display: flex;
   margin-top: 30px;
@@ -74,18 +67,13 @@ ul li:hover {
 .main-text-container h1 {
   font-size: 80px;
   font-family: "Abril Fatface", cursive;
-  /*   flex: 1; */
-  /*   background-color: blue; */
-  /*   width: 200px */
 }
 
 .main-text-container p {
-  /*   flex: 0.5; */
   display: flex;
   align-items: flex-start;
   height: max-content;
   font-size: 16px;
-  /*   background-color: blue; */
   width: 22%;
   margin-top: 60px;
   margin-left: 100px;
@@ -112,10 +100,6 @@ p.desc-text:hover:after {
   transform: scaleX(1);
 }
 
-p.desc-text:hover {
-  /*   border-bottom: solid 2px #ff4d4d; */
-}
-
 .recipie-cards-container {
   display: flex;
   padding-left: 60px;
@@ -123,7 +107,6 @@ p.desc-text:hover {
   width: 1070px;
   height: 300px;
   padding-top: 20px;
-  /*     background-color: blue; */
 }
 
 .recipie-cards-container::-webkit-scrollbar {
@@ -161,6 +144,12 @@ p.desc-text:hover {
   font-weight: 600;
 }
 
+.mobile-cards-container,
+.desc-text-mobile,
+.flex-box-mobile-nav {
+  display: none;
+}
+
 @media only screen and (max-width: 414px) {
   body {
     width: 100vw;
@@ -173,7 +162,9 @@ p.desc-text:hover {
   }
 
   .flex-box-mobile-nav .burger-menu {
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-top: 8px;
+    cursor: pointer;
   }
 
   .flex-box-mobile-nav h1 {
@@ -186,19 +177,20 @@ p.desc-text:hover {
   }
 
   .cart-mobile {
-    margin-right: 20px;
+    margin-right: 10px;
+    margin-top: 4px;
   }
 
   .top-heading h1 {
     font-family: "Abril Fatface", cursive;
     display: none;
-    /*     background-color: blue; */
-
     width: 100%;
   }
 
   .side-nav {
     position: relative;
+    bottom: 24px;
+    left: 6px;
   }
 
   #side-nav-list {
@@ -213,16 +205,14 @@ p.desc-text:hover {
     position: absolute;
     z-index: 12;
     display: none;
-    /*     align-items:center; */
   }
 
   ul li {
     text-decoration: none;
     list-style-type: none;
-    margin: 8px 0px 8px 0px;
+    margin: 10px 0px 10px 0px;
     cursor: pointer;
     padding-left: 20px;
-    /*   background-color: blue; */
     width: 25%;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -231,6 +221,7 @@ p.desc-text:hover {
 
   .main-text-container h1 {
     font-size: 30px;
+    margin-left: -110px;
   }
 
   .main-text-container p {
@@ -248,23 +239,17 @@ p.desc-text:hover {
   .mobile-cards-container {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -50px;
+    width: 380px;
   }
 
   .card {
-    height: 150px;
-    width: 120px;
+    height: 200px;
+    width: 164px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
-  }
-
-  .mobile-cards-container:nth-child(3) {
-    margin-top: 20px;
-  }
-
-  .mobile-cards-container:nth-child(4) {
-    margin-top: 20px;
   }
 
   .last-child {
@@ -272,11 +257,32 @@ p.desc-text:hover {
   }
 
   .card img {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
   }
 
   .card p {
     font-size: 12.5px;
+  }
+
+  p.desc-text-mobile {
+    display: block;
+    margin-left: -50px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  p.desc-text-mobile::after {
+    display: block;
+    content: "";
+    border-bottom: solid 2px #ff4d4d;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    width: 60px;
+  }
+
+  p.desc-text-mobile:hover::after {
+    transform-origin: 0% 50%;
+    transform-origin: 50% 100%;
+    transform: scaleX(1);
   }
 }
